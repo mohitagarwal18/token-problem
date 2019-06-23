@@ -1,0 +1,2 @@
+class TokenPool < ApplicationRecord
+end
