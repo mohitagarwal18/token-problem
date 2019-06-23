@@ -15,7 +15,7 @@ class TokensController < ApplicationController
   def get_token
     token = TokenPool.find_by_is_locked(false) rescue nil
     if token
-      token.update(is_locked: true)
+      token.update(is_locked: true, last_access: Time.now())
       respond_to do |format|
         format.json { render json: { token: token.token}, status: 200 }
       end
