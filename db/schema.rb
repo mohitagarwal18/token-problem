@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_06_23_080741) do
 
   create_table "token_pools", force: :cascade do |t|
     t.string "token"
-    t.boolean "is_locked"
+    t.boolean "is_locked", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
